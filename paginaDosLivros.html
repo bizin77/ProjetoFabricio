@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+
+    <link rel="stylesheet" href="estiloPaginaDosLIvros.css">
+
+</head>
+
+<body>
+
+
+    <div class="gallery">
+
+        <ul class="controls">
+            <li class="buttons active" data-filter="all">Todos</li>
+            <li class="buttons" data-filter="primeiro-ano">Primeiro Ano</li>
+            <li class="buttons" data-filter="segundo-ano">Segundo Ano</li>
+            <li class="buttons" data-filter="terceiro-ano">Terceiro Ano</li>
+            <li class="buttons" data-filter="quarto-ano">Quarto Ano</li>
+        </ul>
+
+
+        <div class="image-container">
+
+            <a href="imagensLivros/LivroArte1.jpg" class="image primeiro-ano || quarto-ano">
+                <img src="imagensLivros/LivroArte1.jpg" alt="">
+            </a>
+            <a href="imagensLivros/LivroBiologia1.jpg" class="image primeiro-ano">
+                <img src="imagensLivros/LivroBiologia1.jpg" alt="">
+            </a>
+
+            <a href="imagensLivros/LivroQuimica1.jpg" class="image primeiro-ano">
+                <img src="imagensLivros/LivroQuimica1.jpg" alt="">
+            </a>
+            <a href="imagensLivros/LivroFisica1.png" class="image segundo-ano">
+                <img src="imagensLivros/LivroFisica1.png" alt="">
+            </a>
+
+            <a href="imagensLivros/LivroFilosofia1.png" class="image primeiro-ano || segundo-ano || terceiro-ano || quarto-ano">
+                <img src="imagensLivros/LivroFilosofia1.png" alt="">
+            </a>
+            <a href="imagensLivros/LivroGeografia1.jpg" class="image primeiro-ano">
+                <img src="imagensLivros/LivroGeografia1.jpg" alt="">
+            </a>
+
+            <a href="imagensLivros/LivroHistoria1.png" class="image primeiro-ano">
+                <img src="imagensLivros/LivroHistoria1.png" alt="">
+            </a>
+            <a href="imagensLivros/LivroPortugues1.jfif" class="image primeiro-ano">
+                <img src="imagensLivros/LivroPortugues1.jfif" alt="">
+            </a>
+            <a href="imagensLivros/LivroQuimica1.jpg" class="image primeiro-ano">
+                <img src="imagensLivros/LivroQuimica1.jpg" alt="">
+            </a>
+            <a href="imagensLivros/LivroSociologia.png" class="image || segundo-ano || terceiro-ano || quarto-ano">
+                <img src="imagensLivros/LivroSociologia.png" alt="">
+            </a>
+
+
+            <a href="imagensLivros/LivroBiologia2.jfif" class="image segundo-ano">
+                <img src="imagensLivros/LivroBiologia2.jfif" alt="">
+
+                
+                <a href="imagensLivros/LivroFisica2.jpg" class="image terceiro-ano">
+                    <img src="imagensLivros/LivroFisica2.jpg" alt="">
+                </a>
+                <a href="imagensLivros/LivroGeografia2.jpg" class="image segundo-ano">
+                    <img src="imagensLivros/LivroGeografia2.jpg" alt="">
+                </a>
+
+               
+
+                <a href="imagensLivros/LivroHistoria2.png" class="image segundo-ano">
+                    <img src="imagensLivros/LivroHistoria2.png" alt="">
+                </a>
+
+                <a href="imagensLivros/LivroPortugues2.png" class="image segundo-ano">
+                    <img src="imagensLivros/LivroPortugues2.png" alt="">
+                </a>
+
+                <a href="imagensLivros/LivroQuimica2.jpg" class="image segundo-ano">
+                    <img src="imagensLivros/LivroQuimica2.jpg" alt="">
+                </a>
+
+                <a href="imagensLivros/LivroGeografia3.jpg" class="image segundo-ano">
+                    <img src="imagensLivros/LivroGeografia3.jpg" alt="">
+                </a>
+
+                <a href="imagensLivros/LivroHistoria3.png" class="image segundo-ano">
+                    <img src="imagensLivros/LivroHistoria3.png" alt="">
+                </a>
+
+                <a href="imagensLivros/LivroBiologia3.jfif" class="image terceiro-ano">
+                    <img src="imagensLivros/LivroBiologia3.jfif" alt="">
+                </a>
+
+                <a href="imagensLivros/LivroFisica3.jpg" class="image quarto-ano">
+                    <img src="imagensLivros/LivroFisica3.jpg" alt="">
+                </a>
+
+               
+
+                <a href="imagensLivros/LivroQuimica3.jpg" class="image terceiro-ano">
+                    <img src="imagensLivros/LivroQuimica3.jpg" alt="">
+                </a>
+
+                <a href="imagensLivros/LivroPortugues3e4.jfif" class="image quarto-ano || terceiro-ano">
+                    <img src="imagensLivros/LivroPortugues3e4.jfif" alt="">
+                </a>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('.buttons').click(function () {
+
+                $(this).addClass('active').siblings().removeClass('active');
+
+                var filter = $(this).attr('data-filter')
+
+                if (filter == 'all') {
+                    $('.image').show(400);
+                } else {
+                    $('.image').not('.' + filter).hide(200);
+                    $('.image').filter('.' + filter).show(400);
+                }
+
+            });
+
+            $('.gallery').magnificPopup({
+
+                delegate: 'a',
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
